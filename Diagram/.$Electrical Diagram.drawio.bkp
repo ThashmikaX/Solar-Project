@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2024-06-25T20:38:14.051Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.6.1 Chrome/124.0.6367.207 Electron/30.0.6 Safari/537.36" etag="AjUG8WTzQqLFqkY7J3Cl" version="24.6.1" type="device" pages="2">
+<mxfile host="Electron" modified="2024-06-16T19:44:55.316Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.5.3 Chrome/124.0.6367.207 Electron/30.0.6 Safari/537.36" etag="hJyDGyI1qdbp3Ew2UPRh" version="24.5.3" type="device">
   <diagram name="Page-1" id="UDWIhsH5KPRdUaMOV2Dy">
     <mxGraphModel dx="1434" dy="884" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -406,57 +406,6 @@
         </mxCell>
         <mxCell id="H_FyW5I750rKoFBD7mA_-36" value="DC Pump" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="288.5" y="641" width="80" height="30" as="geometry" />
-        </mxCell>
-      </root>
-    </mxGraphModel>
-  </diagram>
-  <diagram id="Hig99wTVypY6mAgFfHvX" name="Page-2">
-    <mxGraphModel dx="956" dy="589" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
-      <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
-        <mxCell id="XgMZsswfTMiNAPT0iXdc-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="a7U0RozFhYf46scMAKcN-1" target="XgMZsswfTMiNAPT0iXdc-4">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="XgMZsswfTMiNAPT0iXdc-7" value="Subscribe" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="XgMZsswfTMiNAPT0iXdc-5">
-          <mxGeometry x="-0.0308" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="a7U0RozFhYf46scMAKcN-1" value="MQTT Broker" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="392" y="319" width="140" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="XgMZsswfTMiNAPT0iXdc-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XgMZsswfTMiNAPT0iXdc-1" target="a7U0RozFhYf46scMAKcN-1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="XgMZsswfTMiNAPT0iXdc-3" value="Publish" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="XgMZsswfTMiNAPT0iXdc-2">
-          <mxGeometry x="-0.0319" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="XgMZsswfTMiNAPT0iXdc-1" value="ESP 32&lt;div&gt;(Publisher)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="180" y="324" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="XgMZsswfTMiNAPT0iXdc-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XgMZsswfTMiNAPT0iXdc-4" target="XgMZsswfTMiNAPT0iXdc-8">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="XgMZsswfTMiNAPT0iXdc-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XgMZsswfTMiNAPT0iXdc-4" target="XgMZsswfTMiNAPT0iXdc-10">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="XgMZsswfTMiNAPT0iXdc-4" value="Node-Red&lt;div&gt;(Subscriber)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="642" y="319" width="140" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="XgMZsswfTMiNAPT0iXdc-8" value="InfluxDB&lt;div&gt;(Database)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="642" y="439" width="140" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="XgMZsswfTMiNAPT0iXdc-10" value="Realtime&lt;div&gt;Dashboard&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="850" y="319" width="140" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="XgMZsswfTMiNAPT0iXdc-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="XgMZsswfTMiNAPT0iXdc-13" target="XgMZsswfTMiNAPT0iXdc-1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="XgMZsswfTMiNAPT0iXdc-13" value="Sensors" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="180" y="464" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
