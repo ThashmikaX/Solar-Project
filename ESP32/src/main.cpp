@@ -1,17 +1,6 @@
-/**************************************************
-Home automation code for ESP32 - Arduino IDE
-Connect LED + 330 ohm resistor to D2
-Connect Potentiometer wiper to D34, 3.3V and gnd
-Code for 1st ESP32
-*************************************************/
-
 #include <WiFi.h> //included in ESP32 boards package
 #include <PubSubClient.h> //Install with Arduino Library manager or download at https://github.com/knolleary/pubsubclient
-
-// Replace the next variables with your SSID/Password combination
-const char* ssid = "Dialog 4G 376";//Add here your Wifi SSID name
-const char* password = "Enigmas1"; //Add here your Wifi password
-const char* mqtt_server = "192.168.8.195";// your MQTT broker IPv4 adress - THIS IS DIFFERENT FOR YOU, pls check yours with "ipconfig"  in cmd line
+#include "Credentials.h"
 
 WiFiClient espClient;
 PubSubClient client(espClient);// To connect more ESP32's change "client" to for instance "client2" here and in the rest of the code
@@ -28,7 +17,7 @@ void callback(char* topic, byte* message, unsigned int length);
 void setup() {
   Serial.begin(115200);
   setup_wifi();
-  client.setServer(mqtt_server, 1883);
+  client.setServer(MQTT_SERVER, 1883);
   client.setCallback(callback);
   pinMode(ledPin, OUTPUT);//set ledPin to output
   //Potentiometer GPIO34: no Pinmode for Analog-inputs: The analogRead() function takes care of that :-)
@@ -38,8 +27,8 @@ void setup_wifi() {  // Connect to WiFi network
   delay(100);
   Serial.println();
   Serial.print("Connecting to Wifi");
-  //Serial.println(ssid); //uncomment if you want to see your SSID in serial monitor
-  WiFi.begin(ssid, password);
+  //Serial.println(SSID); //uncomment if you want to see your SSID in serial monitor
+  WiFi.begin(SSID, WIFI_PASSWORD);
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
@@ -98,7 +87,8 @@ void loop() {
   long now = millis();
   if (now - lastMsg > 2000) { // message refresh rate in milliseconds
     lastMsg = now;
-    temperature = 10;//12 bit: 0-4096 make it "more-or-less" 0-100
+    int analogValue = analogRead(potmeterPin);//read analog GPIO 34 - the potentiometer
+    temperature = (analogValue/40);//12 bit: 0-4096 make it "more-or-less" 0-100
     delay(100);  // delay in between reads for clear read from serial
     char tempString[8];
     dtostrf(temperature, 1, 2, tempString);
