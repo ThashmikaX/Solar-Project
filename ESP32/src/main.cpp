@@ -1,6 +1,7 @@
 #include <WiFi.h> //included in ESP32 boards package
 #include <PubSubClient.h> //Install with Arduino Library manager or download at https://github.com/knolleary/pubsubclient
 #include "Credentials.h"
+#include "dht_11.h"
 
 WiFiClient espClient;
 PubSubClient client(espClient);// To connect more ESP32's change "client" to for instance "client2" here and in the rest of the code
@@ -21,6 +22,8 @@ void setup() {
   client.setCallback(callback);
   pinMode(ledPin, OUTPUT);//set ledPin to output
   //Potentiometer GPIO34: no Pinmode for Analog-inputs: The analogRead() function takes care of that :-)
+
+  setupDHT();
 }
 
 void setup_wifi() {  // Connect to WiFi network
@@ -78,6 +81,7 @@ void reconnect() {
     }
   }
 }
+
 void loop() {
   if (!client.connected()) {
     reconnect();
@@ -87,13 +91,15 @@ void loop() {
   long now = millis();
   if (now - lastMsg > 2000) { // message refresh rate in milliseconds
     lastMsg = now;
-    int analogValue = analogRead(potmeterPin);//read analog GPIO 34 - the potentiometer
-    temperature = (analogValue/40);//12 bit: 0-4096 make it "more-or-less" 0-100
+    // int analogValue = analogRead(potmeterPin);//read analog GPIO 34 - the potentiometer
+    // temperature = (analogValue/40);//12 bit: 0-4096 make it "more-or-less" 0-100
+    
+    temperature = readDHT();
     delay(100);  // delay in between reads for clear read from serial
     char tempString[8];
     dtostrf(temperature, 1, 2, tempString);
     Serial.print("Temperature: ");
     Serial.println(tempString);
-    client.publish("esp32/temperature", tempString);//send the message to the MQTT broker, if add more ESP32 change topic esp32 to for instance esp33
+    client.publish("esp32/pre-heated-air", tempString);//send the message to the MQTT broker, if add more ESP32 change topic esp32 to for instance esp33
   }
 }
