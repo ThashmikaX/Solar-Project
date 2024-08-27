@@ -44,7 +44,7 @@ float readDHT() {
   Serial.print(hic);
   Serial.print(F("°C "));
   Serial.print(hif);
-  Serial.println(F("°F"));
+  Serial.println(F("°F\n\n"));
 
   return t;
 }
