@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2024-07-17T17:37:09.907Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.6.4 Chrome/124.0.6367.207 Electron/30.0.6 Safari/537.36" etag="CXi40wXcGUqp6pnHCZBl" version="24.6.4" type="device" pages="4">
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.8 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.8" pages="4">
   <diagram name="System" id="UDWIhsH5KPRdUaMOV2Dy">
-    <mxGraphModel dx="2049" dy="1263" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="3585" dy="2335" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -246,7 +246,7 @@
         <mxCell id="cgbXrBQwwMwu3xeiiYnt-93" value="Flow Sensors" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
           <mxGeometry x="1335" y="720" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="cgbXrBQwwMwu3xeiiYnt-94" value="" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;labelBackgroundColor=default;dashed=1;fillColor=#e3c800;strokeColor=#B09500;fontColor=#000000;" parent="1" vertex="1">
+        <mxCell id="cgbXrBQwwMwu3xeiiYnt-94" value="" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Helvetica;fontSize=11;labelBackgroundColor=default;dashed=1;" parent="1" vertex="1">
           <mxGeometry x="550" y="200" width="350" height="330" as="geometry" />
         </mxCell>
         <mxCell id="cgbXrBQwwMwu3xeiiYnt-95" value="Solar Pannel" style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;points=[[0,0,0,0,0],[0,0.25,0,0,0],[0,0.5,0,0,0],[0,0.75,0,0,0],[0,1,0,0,0],[0.25,0,0,0,0],[0.25,1,0,0,0],[0.5,0,0,0,0],[0.5,1,0,0,0],[0.75,0,0,0,0],[0.75,1,0,0,0],[1,0,0,0,0],[1,0.25,0,0,0],[1,0.5,0,0,0],[1,0.75,0,0,0],[1,1,0,0,0]];" parent="1" vertex="1">
@@ -478,36 +478,36 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram id="EONgMRhYZcuaUeORegoa" name="Dashboard">
-    <mxGraphModel dx="1434" dy="884" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+  <diagram id="EONgMRhYZcuaUeORegoa" name="Dashboard UI">
+    <mxGraphModel dx="1434" dy="934" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="al4IEYF4XVCCeQpjEyQB-9" value="" style="group" vertex="1" connectable="0" parent="1">
+        <mxCell id="al4IEYF4XVCCeQpjEyQB-9" value="" style="group" parent="1" vertex="1" connectable="0">
           <mxGeometry x="100" y="74" width="1000" height="680" as="geometry" />
         </mxCell>
-        <mxCell id="al4IEYF4XVCCeQpjEyQB-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="al4IEYF4XVCCeQpjEyQB-9">
+        <mxCell id="al4IEYF4XVCCeQpjEyQB-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="al4IEYF4XVCCeQpjEyQB-9" vertex="1">
           <mxGeometry width="1000" height="680" as="geometry" />
         </mxCell>
-        <mxCell id="al4IEYF4XVCCeQpjEyQB-2" value="System HMI" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="al4IEYF4XVCCeQpjEyQB-9">
+        <mxCell id="al4IEYF4XVCCeQpjEyQB-2" value="System HMI" style="rounded=0;whiteSpace=wrap;html=1;" parent="al4IEYF4XVCCeQpjEyQB-9" vertex="1">
           <mxGeometry x="60" y="60" width="490" height="540" as="geometry" />
         </mxCell>
-        <mxCell id="al4IEYF4XVCCeQpjEyQB-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="al4IEYF4XVCCeQpjEyQB-9">
+        <mxCell id="al4IEYF4XVCCeQpjEyQB-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="al4IEYF4XVCCeQpjEyQB-9" vertex="1">
           <mxGeometry x="570" y="60" width="370" height="540" as="geometry" />
         </mxCell>
-        <mxCell id="al4IEYF4XVCCeQpjEyQB-4" value="Date/Time" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="al4IEYF4XVCCeQpjEyQB-9">
+        <mxCell id="al4IEYF4XVCCeQpjEyQB-4" value="Date/Time" style="rounded=0;whiteSpace=wrap;html=1;" parent="al4IEYF4XVCCeQpjEyQB-9" vertex="1">
           <mxGeometry x="615" y="90" width="280" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="al4IEYF4XVCCeQpjEyQB-5" value="Solar Radience" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="al4IEYF4XVCCeQpjEyQB-9">
+        <mxCell id="al4IEYF4XVCCeQpjEyQB-5" value="Solar Radience" style="rounded=0;whiteSpace=wrap;html=1;" parent="al4IEYF4XVCCeQpjEyQB-9" vertex="1">
           <mxGeometry x="615" y="176" width="280" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="al4IEYF4XVCCeQpjEyQB-6" value="Flow Rate&lt;span style=&quot;color: rgba(0, 0, 0, 0); font-family: monospace; font-size: 0px; text-align: start; text-wrap: nowrap;&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22Solar%20Radience%22%20style%3D%22rounded%3D0%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22695%22%20y%3D%22220%22%20width%3D%22280%22%20height%3D%2250%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="al4IEYF4XVCCeQpjEyQB-9">
+        <mxCell id="al4IEYF4XVCCeQpjEyQB-6" value="Flow Rate&lt;span style=&quot;color: rgba(0, 0, 0, 0); font-family: monospace; font-size: 0px; text-align: start; text-wrap: nowrap;&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22Solar%20Radience%22%20style%3D%22rounded%3D0%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22695%22%20y%3D%22220%22%20width%3D%22280%22%20height%3D%2250%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="al4IEYF4XVCCeQpjEyQB-9" vertex="1">
           <mxGeometry x="615" y="269.5" width="280" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="al4IEYF4XVCCeQpjEyQB-7" value="Air Flow Fan - Input" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="al4IEYF4XVCCeQpjEyQB-9">
+        <mxCell id="al4IEYF4XVCCeQpjEyQB-7" value="Air Flow Fan - Input" style="rounded=0;whiteSpace=wrap;html=1;" parent="al4IEYF4XVCCeQpjEyQB-9" vertex="1">
           <mxGeometry x="615" y="356" width="280" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="al4IEYF4XVCCeQpjEyQB-8" value="Heating element active time" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="al4IEYF4XVCCeQpjEyQB-9">
+        <mxCell id="al4IEYF4XVCCeQpjEyQB-8" value="Heating element active time" style="rounded=0;whiteSpace=wrap;html=1;" parent="al4IEYF4XVCCeQpjEyQB-9" vertex="1">
           <mxGeometry x="615" y="446" width="280" height="70" as="geometry" />
         </mxCell>
       </root>
