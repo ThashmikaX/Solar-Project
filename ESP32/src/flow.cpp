@@ -16,7 +16,7 @@ void IRAM_ATTR pulseCounter()
   pulseCount++;
 }
 
-void flowSetup()
+void setupFlow()
 {
     pinMode(LED_BUILTIN, OUTPUT);
     pinMode(SENSOR, INPUT_PULLUP);
@@ -30,9 +30,10 @@ void flowSetup()
     attachInterrupt(digitalPinToInterrupt(SENSOR), pulseCounter, FALLING);
 }
 
-void readFlow()
+float readFlow()
 {
-    currentMillis = millis();
+  float finalData = 0.0;
+  currentMillis = millis();
   if (currentMillis - previousMillis > interval) {
     
     pulse1Sec = pulseCount;
@@ -57,6 +58,7 @@ void readFlow()
     // Print the flow rate for this second in litres / minute
     Serial.print("Flow rate: ");
     Serial.print(flowRate);  // Print the integer part of the variable
+    finalData = flowRate;
     Serial.print("L/min");
     
     Serial.print("\t");       // Print tab space
@@ -68,4 +70,5 @@ void readFlow()
     Serial.print(totalMilliLitres / 1000);
     Serial.println("L\t");
   }
+  return finalData;
 }

@@ -7,7 +7,7 @@
 #include <Arduino.h>
 
 void IRAM_ATTR pulseCounter();
-void flowSetup();
-void readFlow();
+void setupFlow();
+float readFlow();
 
 #endif 
