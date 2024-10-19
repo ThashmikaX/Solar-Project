@@ -21,6 +21,6 @@ extern DallasTemperature sensors2;
 extern DallasTemperature storageFluid;
 
 void setupDS();
-void readDS();
+float* readDS();
 
 #endif
