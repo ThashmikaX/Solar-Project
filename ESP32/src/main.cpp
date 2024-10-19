@@ -8,13 +8,13 @@ void setup()
 {
   Serial.begin(115200);
   flowSetup();
-  // setupDHT();
-  // setupDS();
+  setupDHT();
+  setupDS();
 }
 
 void loop()
 {
   readFlow();
-  // readDHT();
-  // readDS();
+  readDHT();
+  readDS();
 }
