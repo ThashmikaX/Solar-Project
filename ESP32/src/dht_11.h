@@ -8,7 +8,8 @@
 
 #include <DHT.h>
 
-#define DHTPIN 14     // Digital pin connected to the DHT sensor
+#define DHTPIN 14
+#define DHTPIN2 13
 // Feather HUZZAH ESP8266 note: use pins 3, 4, 5, 12, 13 or 14 --
 // Pin 15 can work but DHT must be disconnected during program upload.
 
@@ -24,7 +25,14 @@
 // Connect pin 4 (on the right) of the sensor to GROUND
 // Connect a 10K resistor from pin 2 (data) to pin 1 (power) of the sensor
 
+struct SensorReadings {
+  float temp1;
+  float temp2;
+  float humidity1;
+  float humidity2;
+};
+
 void setupDHT();
-float readDHT();
+SensorReadings readAllDHTSensors();  // Function to read both sensors
 
 #endif /* DHT_11_H */

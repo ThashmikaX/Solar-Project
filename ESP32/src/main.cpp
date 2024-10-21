@@ -7,11 +7,11 @@
 #include <Wire.h>
 
 // WiFi credentials
-const char* ssid = "your_SSID";
-const char* password = "your_PASSWORD";
+const char* ssid = "Dialog 4G 376";
+const char* password = "Enigmas1";
 
 // Google Apps Script URL
-const char* googleScriptURL = "https://script.google.com/macros/s/AKfycby8e4LqBUUa_RUNLIXSS559z_eB4k4bcHzbIXpCyIHV6dJu-hmobhuMSbU-bThftBTf/exec";
+const char* googleScriptURL = "https://script.google.com/macros/s/AKfycbyJ2NxwW6h5phGAmb0doewDHxM3juDeM_LC4S2doJcqZsHUKAljQxT73SEJh34_AsR5/exec";
 
 void setup() {
   Serial.begin(115200);
@@ -29,21 +29,35 @@ void setup() {
 }
 
 void loop() {
-  float dhtValue = readDHT();
+  // Call the function to read data from both sensors
+  SensorReadings readings = readAllDHTSensors();
+
+  // Access and use the individual values
+  float temp1 = readings.temp1;
+  float temp2 = readings.temp2;
+  float hu1 = readings.humidity1;
+  float hu2 = readings.humidity2;
+  delay(2000);
   float flowValue = readFlow();
+  delay(1200);
   float* dsValues = readDS();
+  delay(200);
 
   if (WiFi.status() == WL_CONNECTED) {
     HTTPClient http;
     http.begin(googleScriptURL);
     http.addHeader("Content-Type", "application/json");
 
-    String jsonPayload = "{\"dht\":" + String(dhtValue) + 
-                         ",\"flow\":" + String(flowValue) + 
-                         ",\"ds\":[" + String(dsValues[0]) + 
-                         "," + String(dsValues[1]) + 
-                         "," + String(dsValues[2]) + 
-                         "," + String(dsValues[3]) + "]}";
+    String jsonPayload = "{\"dht1\": {\"temperature\": " + String(temp1) + 
+                    ", \"humidity\": " + String(hu1) + "}," +
+                    "\"dht2\": {\"temperature\": " + String(temp2) + 
+                    ", \"humidity\": " + String(hu2) + "}," +
+                    "\"flow\": " + String(flowValue) + "," +
+                    "\"ds\": [" + String(dsValues[0]) + 
+                    "," + String(dsValues[1]) + 
+                    "," + String(dsValues[2]) + 
+                    "," + String(dsValues[3]) + "]}";
+
 
     int httpResponseCode = http.POST(jsonPayload);
 

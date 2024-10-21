@@ -5,10 +5,10 @@ OneWire oneWire(ONE_WIRE_BUS);
 OneWire oneWire1(ONE_WIRE_BUS1);
 OneWire oneWire2(ONE_WIRE_BUS2);
 OneWire oneWire3(ONE_WIRE_BUS3);
-DallasTemperature sensors(&oneWire);
-DallasTemperature sensors1(&oneWire1);
-DallasTemperature sensors2(&oneWire2);
-DallasTemperature storageFluid(&oneWire3);
+DallasTemperature sensors(&oneWire); //solar-collector-in
+DallasTemperature sensors1(&oneWire1);  //solar-collector-out
+DallasTemperature sensors2(&oneWire2);  //exchanger-in
+DallasTemperature storageFluid(&oneWire3); //storage-fluid
 
 void setupDS(){
     sensors.begin();
@@ -35,7 +35,12 @@ float* readDS() {
 
     // Check if reading was successful
     if (temperatures[0] == DEVICE_DISCONNECTED_C) {
-        Serial.println("Error: Could not read temperature data\n");
+        // Serial.println("Error: Could not read temperature data\n");
+        temperatures[0] = 0.0;
+        temperatures[1] = 0.0;
+        temperatures[2] = 0.0;
+        temperatures[3] = 0.0;
+        return temperatures;
     } else {
         Serial.print("Device 1 Temp: ");
         Serial.print(temperatures[0]);
