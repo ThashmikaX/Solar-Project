@@ -2,7 +2,7 @@
 #define FLOW_H
 
 #define LED_BUILTIN 3
-#define SENSOR  27
+#define SENSOR  32
 
 #include <Arduino.h>
 

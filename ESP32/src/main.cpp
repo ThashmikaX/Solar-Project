@@ -6,6 +6,7 @@
 #include <WiFi.h> //included in ESP32 boards package
 #include <PubSubClient.h> //Install with Arduino Library manager or download at https://github.com/knolleary/pubsubclient
 #include "Credentials.h"
+#include "AnalogReader.h"
 
 WiFiClient espClient;
 PubSubClient client(espClient);// To connect more ESP32's change "client" to for instance "client2" here and in the rest of the code
@@ -18,6 +19,9 @@ const int potmeterPin = 34;  //Connect Potentiometer to GPIO34
 
 void setup_wifi();
 void callback(char* topic, byte* message, unsigned int length);
+
+// Create an instance of the AnalogReader class
+AnalogReader analogReader(34);
 
 void setup()
 {
@@ -166,10 +170,18 @@ char flowString[8];
 dtostrf(flowRate, 1, 2, flowString);
 client.publish("esp32/flow-rate", liquidTempString[3]);
 
+float heater = analogReader.readValue();
+char heaterString[8];
+dtostrf(heater, 1, 2, heaterString);
+client.publish("esp32/heater", heaterString);
+
+  // Print the result to the Serial Monitor
+Serial.print("Result: ");
+Serial.println(heater);
 
 
 // Delay for 100 ms to allow clear reads and transmissions
-delay(100);
+delay(500);
 
   }
 }
