@@ -8,6 +8,6 @@
 
 void IRAM_ATTR pulseCounter();
 void flowSetup();
-void readFlow();
+float readFlow();
 
 #endif 

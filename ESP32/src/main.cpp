@@ -90,10 +90,6 @@ void reconnect() {
 }
 
 void loop() {
-  readDHT();
-  readDS();
-  readFlow();
-
   if (!client.connected()) {
     reconnect();
   }
@@ -115,16 +111,65 @@ void loop() {
     }
     
     
-    temperature = readDHT();
-    delay(100);  // delay in between reads for clear read from serial
-    char tempString[8];
-    dtostrf(temperature, 1, 2, tempString);
-    Serial.print("Temperature: ");
-    Serial.println(tempString);
-    client.publish("esp32/d-chamber", tempString);//send the message to the MQTT broker, if add more ESP32 change topic esp32 to for instance esp33
-    client.publish("esp32/solar-collector-in", liquidTempString[0]);
-    client.publish("esp32/solar-collector-out", liquidTempString[1]);
-    client.publish("esp32/exchanger-in", liquidTempString[2]);
-    client.publish("esp32/storage-fluid", liquidTempString[3]);
+    // Assuming you have a function that reads all DHT sensor values like readAllDHTSensors()
+// and stores the results in a struct (SensorReadings).
+
+SensorReadings sensorData = readAllDHTSensors(); // Read temperature and humidity from both sensors
+
+// Publish D-Chamber (DHT1) temperature and humidity data
+char temp1String[8], hum1String[8];
+dtostrf(sensorData.temp1, 1, 2, temp1String); // Convert temp1 to string
+dtostrf(sensorData.humidity1, 1, 2, hum1String); // Convert humidity1 to string
+delay(2000);  // Delay between readings
+
+Serial.print("D-Chamber Temperature: ");
+Serial.println(temp1String);
+Serial.print("D-Chamber Humidity: ");
+Serial.println(hum1String);
+
+// Publish temperature and humidity for D-Chamber
+client.publish("esp32/d-chamber/temperature", temp1String);
+client.publish("esp32/d-chamber/humidity", hum1String);
+
+// Publish Ambient Air (DHT2) temperature and humidity data
+char temp2String[8], hum2String[8];
+dtostrf(sensorData.temp2, 1, 2, temp2String); // Convert temp2 to string
+dtostrf(sensorData.humidity2, 1, 2, hum2String); // Convert humidity2 to string
+
+Serial.print("Ambient Air Temperature: ");
+Serial.println(temp2String);
+Serial.print("Ambient Air Humidity: ");
+Serial.println(hum2String);
+
+// Publish temperature and humidity for Ambient Air
+client.publish("esp32/ambient-air/temperature", temp2String);
+client.publish("esp32/ambient-air/humidity", hum2String);
+
+// Assuming you have liquid temperature readings in the array liquidTempString[]
+Serial.print("Liquid Sensor 1: ");
+Serial.println(liquidTempString[0]);
+Serial.print("Liquid Sensor 2: ");
+Serial.println(liquidTempString[1]);
+Serial.print("Liquid Sensor 3: ");
+Serial.println(liquidTempString[2]);
+Serial.print("Liquid Sensor 4: ");
+Serial.println(liquidTempString[3]);
+
+// Publish liquid temperature sensor values
+client.publish("esp32/solar-collector-in", liquidTempString[0]);
+client.publish("esp32/solar-collector-out", liquidTempString[1]);
+client.publish("esp32/exchanger-in", liquidTempString[2]);
+client.publish("esp32/storage-fluid", liquidTempString[3]);
+
+float flowRate = readFlow();
+char flowString[8];
+dtostrf(flowRate, 1, 2, flowString);
+client.publish("esp32/flow-rate", liquidTempString[3]);
+
+
+
+// Delay for 100 ms to allow clear reads and transmissions
+delay(100);
+
   }
 }
