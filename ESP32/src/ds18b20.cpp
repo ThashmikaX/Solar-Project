@@ -18,6 +18,11 @@ void setupDS(){
 }
 
 float* readDS() {
+    sensors.begin();
+    sensors1.begin();
+    sensors2.begin();
+    storageFluid.begin();
+
     static float temperatures[4]; // Array to hold the temperature values
 
     // Call sensors.requestTemperatures() to issue a global temperature 
@@ -32,6 +37,7 @@ float* readDS() {
     temperatures[1] = sensors1.getTempCByIndex(0);
     temperatures[2] = sensors2.getTempCByIndex(0);
     temperatures[3] = storageFluid.getTempCByIndex(0);
+
 
     // Check if reading was successful
     if (temperatures[0] == DEVICE_DISCONNECTED_C) {

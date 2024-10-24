@@ -8,6 +8,7 @@
 #include "Credentials.h"
 #include "AnalogReader.h"
 
+
 WiFiClient espClient;
 PubSubClient client(espClient);// To connect more ESP32's change "client" to for instance "client2" here and in the rest of the code
 long lastMsg = 0;
@@ -33,6 +34,7 @@ void setup()
   //Potentiometer GPIO34: no Pinmode for Analog-inputs: The analogRead() function takes care of that :-)
 
   setupDHT();
+  delay(5500);
   setupDS();
   flowSetup();
 }
@@ -111,7 +113,7 @@ void loop() {
     // Create strings to hold the temperature values
     char liquidTempString[4][8];
     for (int i = 0; i < 4; i++) {
-        dtostrf(lTemperatures[i], 1, 2, liquidTempString[i]);
+        dtostrf(lTemperatures[i], 6, 2, liquidTempString[i]);
     }
     
     
@@ -148,6 +150,15 @@ Serial.println(hum2String);
 // Publish temperature and humidity for Ambient Air
 client.publish("esp32/ambient-air/temperature", temp2String);
 client.publish("esp32/ambient-air/humidity", hum2String);
+// Assuming you have liquid temperature readings in the array liquidTempString[]
+Serial.print("Liquid Sensor 1: ");
+Serial.println(lTemperatures[0]);
+Serial.print("Liquid Sensor 2: ");
+Serial.println(lTemperatures[1]);
+Serial.print("Liquid Sensor 3: ");
+Serial.println(lTemperatures[1]);
+Serial.print("Liquid Sensor 4: ");
+Serial.println(lTemperatures[1]);
 
 // Assuming you have liquid temperature readings in the array liquidTempString[]
 Serial.print("Liquid Sensor 1: ");
@@ -168,7 +179,9 @@ client.publish("esp32/storage-fluid", liquidTempString[3]);
 float flowRate = readFlow();
 char flowString[8];
 dtostrf(flowRate, 1, 2, flowString);
-client.publish("esp32/flow-rate", liquidTempString[3]);
+client.publish("esp32/flow-rate", flowString);
+Serial.print(flowRate);
+Serial.print("\n");
 
 float heater = analogReader.readValue();
 char heaterString[8];

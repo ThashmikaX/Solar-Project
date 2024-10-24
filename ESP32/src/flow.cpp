@@ -4,7 +4,7 @@ long currentMillis = 0;
 long previousMillis = 0;
 int interval = 1000;
 boolean ledState = LOW;
-float calibrationFactor = 53;
+float calibrationFactor = 23;
 volatile byte pulseCount;
 byte pulse1Sec = 0;
 float flowRate;

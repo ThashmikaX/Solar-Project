@@ -9,8 +9,9 @@ void setupDHT() {
   Serial.println(F("DHTxx test!"));
   dht.begin();
   dht2.begin();
-  delay(2000);  // Initial delay after setup
+  delay(5000);  // Increase delay after setup
 }
+
 
 SensorReadings readAllDHTSensors() {
   SensorReadings data;
@@ -19,11 +20,12 @@ SensorReadings readAllDHTSensors() {
   data.humidity2 = dht2.readHumidity();
   data.temp2 = dht2.readTemperature();
 
+  // Wait a little before reading from the other sensor
+  delay(2000);  // Adding a delay between consecutive readings
+
   // Read data from Sensor 1
   data.humidity1 = dht.readHumidity();
   data.temp1 = dht.readTemperature();
-
-  
 
   // Check if any reads failed for Sensor 1
   if (isnan(data.humidity1) || isnan(data.temp1)) {
