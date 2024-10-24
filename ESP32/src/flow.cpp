@@ -4,7 +4,7 @@ long currentMillis = 0;
 long previousMillis = 0;
 int interval = 1000;
 boolean ledState = LOW;
-float calibrationFactor = 53;
+float calibrationFactor = 23;
 volatile byte pulseCount;
 byte pulse1Sec = 0;
 float flowRate;
@@ -30,9 +30,11 @@ void flowSetup()
     attachInterrupt(digitalPinToInterrupt(SENSOR), pulseCounter, FALLING);
 }
 
-void readFlow()
+float readFlow()
 {
-    currentMillis = millis();
+  float flowRate = 0.0;
+
+  currentMillis = millis();
   if (currentMillis - previousMillis > interval) {
     
     pulse1Sec = pulseCount;
@@ -53,19 +55,6 @@ void readFlow()
 
     // Add the millilitres passed in this second to the cumulative total
     totalMilliLitres += flowMilliLitres;
-    
-    // Print the flow rate for this second in litres / minute
-    Serial.print("Flow rate: ");
-    Serial.print(flowRate);  // Print the integer part of the variable
-    Serial.print("L/min");
-    
-    Serial.print("\t");       // Print tab space
-
-    // Print the cumulative total of litres flowed since starting
-    Serial.print("Output Liquid Quantity: ");
-    Serial.print(totalMilliLitres);
-    Serial.print("mL / ");
-    Serial.print(totalMilliLitres / 1000);
-    Serial.println("L\t");
   }
+  return flowRate;
 }

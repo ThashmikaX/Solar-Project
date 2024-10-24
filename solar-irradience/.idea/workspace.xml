@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d49ec69c-244c-4f1c-8d0b-b34ca24d9619" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../ESP32/src/Credentials.h" beforeDir="false" afterPath="$PROJECT_DIR$/../ESP32/src/Credentials.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ESP32/src/dht_11.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../ESP32/src/dht_11.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ESP32/src/dht_11.h" beforeDir="false" afterPath="$PROJECT_DIR$/../ESP32/src/dht_11.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ESP32/src/display.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ESP32/src/display.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ESP32/src/ds18b20.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../ESP32/src/ds18b20.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ESP32/src/flow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../ESP32/src/flow.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ESP32/src/flow.h" beforeDir="false" afterPath="$PROJECT_DIR$/../ESP32/src/flow.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ESP32/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../ESP32/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../figures/HMI new without style.ai" beforeDir="false" afterPath="$PROJECT_DIR$/../figures/HMI new without style.ai" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../figures/HMI new without style.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../figures/HMI new without style.svg" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2ntL3DnP4yvdJPtdFF7DRO5fvj3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d49ec69c-244c-4f1c-8d0b-b34ca24d9619" name="Changes" comment="" />
+      <created>1729787230515</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1729787230515</updated>
+    </task>
+    <servers />
+  </component>
+</project>
